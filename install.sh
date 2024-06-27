@@ -10,7 +10,11 @@ programcheck() {
 }
 
 clonerepo() {
-    git clone https://github.com/thatqui/ultimate-bashrc ~/.config/bash
+    if [ "$(whoami)" == "qui" ]; then
+        git clone git@github.com:thatqui/ultimate-bashrc.git ~/.config/bash
+    else
+        git clone https://github.com/thatqui/ultimate-bashrc.git ~/.config/bash
+    fi
 }
 
 info() {
