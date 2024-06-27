@@ -1,0 +1,27 @@
+source ~/.config/bash/settings.conf
+source ~/.config/bash/*.conf
+
+if [ -f "$HOME/.bashrc.personal" ]; then
+    source ~/.bashrc.personal
+fi
+
+for directory in $PATHDIRS; do
+	if ! echo $PATH | grep $directory >/dev/null; then
+		if [ -d "$directory" ]; then
+			export PATH="$PATH:$directory"
+		fi
+	fi
+done
+
+if [ "$THEME" == "qui" ]; then
+	export PS1="\[\e[31m\][\[\e[m\]\[\e[38;5;172m\]\u\[\e[m\]@\[\e[38;5;153m\]\h\[\e[m\] \[\e[38;5;214m\]\W\[\e[m\]\[\e[31m\]]\[\e[m\] $ "
+elif [ "$THEME" == "gentoo" ]; then
+	export PS1="\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] "
+else
+	echo "Theme $THEME doesn't exist."
+fi
+
+
+if [ "$STARTUPNEO" == "1" ]; then
+	neofetch
+fi
