@@ -9,14 +9,6 @@ programcheck() {
     done
 }
 
-clonerepo() {
-    if [ "$USER" == "qui" ]; then
-        git clone git@github.com:thatqui/ultimate-bashrc.git ~/.config/bash
-    else
-        git clone https://github.com/thatqui/ultimate-bashrc.git ~/.config/bash
-    fi
-}
-
 info() {
     echo -e "\nYou can customize ~/.config/bash/settings.conf. For example:\n# You can add your editor.\nEDITOR='emacs -nw'"
 }
@@ -27,7 +19,6 @@ addbashrc() {
 
 main() {
     programcheck
-    clonerepo
     info
     addbashrc
 }

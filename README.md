@@ -5,5 +5,5 @@
 ### Cloning Repo
 
 ``` bash
-bash <(curl -s https://raw.githubusercontent.com/thatqui/ultimate-bashrc/main/install.sh)
+git clone https://github.com/thatqui/ultimate-bashrc ~/.config/bash && ~/.config/bash/install.sh
 ```
