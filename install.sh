@@ -26,6 +26,7 @@ checkeditor() {
 
 do_options() {
     echo 'EDITOR=${editor}' >> ~/.config/bash/settings.conf
+    echo 'source ~/.config/bash/src/bashrc' >> ~/.bashrc
 }
 
 main() {
