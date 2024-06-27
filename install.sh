@@ -25,7 +25,7 @@ checkeditor() {
 }
 
 do_options() {
-    echo 'EDITOR=$editor' >> ~/.config/bash/settings.conf
+    echo 'EDITOR=${editor}' >> ~/.config/bash/settings.conf
 }
 
 main() {
