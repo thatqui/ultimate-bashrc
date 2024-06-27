@@ -9,32 +9,18 @@ programcheck() {
     done
 }
 
-options() {
-    read -p "[nano] What is your editor? You can change it later: " editor
-}
-
 clonerepo() {
-git clone https://github.com/thatqui/ultimate-bashrc ~/.config/bash
+    git clone https://github.com/thatqui/ultimate-bashrc ~/.config/bash
 }
 
-checkeditor() {
-    if [ ! -n "$editor" ]; then
-        echo "Please specify an editor."
-        options
-    fi
-}
-
-do_options() {
-    echo 'EDITOR=${editor}' >> ~/.config/bash/settings.conf
-    echo 'source ~/.config/bash/src/bashrc' >> ~/.bashrc
+info() {
+    echo -e "\nYou can customize ~/.config/bash/settings.conf. For example:\n# You can add your editor.\nEDITOR='emacs -nw'"
 }
 
 main() {
     programcheck
-    options
-    checkeditor
     clonerepo
-    do_options
+    info
 }
 
 main
